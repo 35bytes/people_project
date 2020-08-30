@@ -6,4 +6,6 @@ urlpatterns = [
     path('drugs/<int:pk>', DrugsAPIView.as_view()),
     path('drug', DrugAPIView.as_view()),
     path('drug/<int:pk>', DrugAPIView.as_view()),
+    path('vaccinations', VaccinationsAPIView.as_view()),
+    path('vaccinations/<int:pk>', VaccinationsAPIView.as_view()),
 ]
