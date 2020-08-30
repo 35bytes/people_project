@@ -17,6 +17,77 @@
 
 This project was developed with `Django REST Framework` to keep track of _vaccinations_ and _drugs_ used through an API service. Here you can __consult, create, modify__ and __delete__ drugs and vaccinations.
 
+The project was deployed publicly on AWS, so anyone can access it.
+
+# How to use?
+
+<div>
+    <table>
+        <tr>
+            <th>URL</th>
+            <th>Method</th>
+            <th>Content Type</th>
+            <th>Body values</th>
+            <th>Restrictions</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/drugs</td>
+            <td>GET</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>List all registered drugs</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/drugs/:id</td>
+            <td>GET</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>You get the detail of a drug.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/drug</td>
+            <td>POST</td>
+            <td>application/json</td>
+            <td>
+                <p>name: string</p>
+                <p>code: string</p>
+                <p>descriptions: string</p>
+            </td>
+            <td>
+                <p>Code can get max 10 chars and it's unique.</p>
+                <p>Description can get max 255 chars.</p>
+            </td>
+            <td>Register a new drug.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/drug/:id</td>
+            <td>PUT</td>
+            <td>application/json</td>
+            <td>
+                <p>name: string</p>
+                <p>code: string</p>
+                <p>descriptions: string</p>
+            </td>
+            <td>
+                <p>Code can get max 10 chars and it's unique.</p>
+                <p>Description can get max 255 chars.</p>
+            </td>
+            <td>Update a drug.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/drug/:id</td>
+            <td>DELETE</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Delete a drug.</td>
+        </tr>
+    </table>
+</div>
+
 # Prerequisites
 
 It's necesary install `MySQL` drivers and `Python>=3.6` to run this project.
