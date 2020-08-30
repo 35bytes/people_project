@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'people_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'peopledb',
+        'USER': 'admin',
+        'PASSWORD': '12345678',
+        'HOST': 'people.ckpklyhwjqxt.sa-east-1.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
