@@ -11,4 +11,4 @@ class Vaccination(models.Model):
     rut = models.CharField(max_length=10)
     dose = models.FloatField()
     date = models.DateField()
-    drug = models.ForeignKey(Drug, related_name='drug', on_delete=models.CASCAD
+    drug = models.ForeignKey(Drug, related_name='drug', on_delete=models.CASCADE)
