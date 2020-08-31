@@ -17,7 +17,7 @@
 
 # Introduction
 
-This project was developed with `Django REST Framework` to keep track of _vaccinations_ and _drugs_ used through an API service. Here you can __consult, create, modify__ and __delete__ drugs and vaccinations.
+This project was developed with `Django REST Framework` to keep track of _vaccinations_ and _drugs_ used through an API service. Here you can __create, read, update,__ and __delete__ __(CRUD)__ drugs and vaccinations.
 
 The project was deployed publicly on AWS, so anyone can access it.
 
