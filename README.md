@@ -8,11 +8,12 @@
 
 # Content
 - [Introduction](#Introduction)
+- [How to use?](#How-to-use?)
 - [Prerequisites](#Prerequisites)
     - [Windows](#Windows)
     - [macOS](#macOS)
     - [Linux](#Linux)
-- [How to use?](#How-to-use?)
+- [Install](#Install)
 
 # Introduction
 
@@ -164,7 +165,7 @@ To install `Python` you can go to the [official page](https://www.python.org/).
 
 Install MySQL:
 
-```
+```zsh
 $ brew install mysql
 ```
 
@@ -186,3 +187,38 @@ Red Hat / CentOS
 ```
 % sudo yum install python3-devel mysql-devel
 ```
+
+# Install
+
+To install this project you need to clone this directory.
+```zsh
+$ git clone https://github.com/karlbehrensg/people_project.git
+```
+
+Now you need go into the project directory, create a virtual environment and install all its dependencies.
+
+```zsh
+$ cd people_project # Entry to project folder
+$ python3 -m venv vevn # Create a virtual environment
+$ source venv/bin/activate # Linux and macOS, to Windows use .\venv\Scripts\activate
+$ pip install -r requirements.txt # Install all requirements.txt
+```
+
+If you do everything like the previews steps, your application will be connect with the database in AWS. If you want to use a personal database you can follow this steps.
+
+Modify the settings.py file in `DATABASES` dictionary.
+
+```py
+...
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+...
+```
+
+This will change the database to a `sqlite` in your local machine.
