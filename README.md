@@ -12,6 +12,7 @@
     - [Windows](#Windows)
     - [macOS](#macOS)
     - [Linux](#Linux)
+- [How to use?](#How-to-use?)
 
 # Introduction
 
@@ -20,6 +21,8 @@ This project was developed with `Django REST Framework` to keep track of _vaccin
 The project was deployed publicly on AWS, so anyone can access it.
 
 # How to use?
+
+You can use the URL in your browser to interact with the API, but maybe is more useful do it with [Postman](https://www.postman.com/).
 
 <div>
     <table>
@@ -85,8 +88,67 @@ The project was deployed publicly on AWS, so anyone can access it.
             <td></td>
             <td>Delete a drug.</td>
         </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/vaccinations</td>
+            <td>GET</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>List all registered vaccinations</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/vaccinations/:id</td>
+            <td>GET</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>You get the detail of a vaccination.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/vaccinations</td>
+            <td>POST</td>
+            <td>application/json</td>
+            <td>
+                <p>rut: string</p>
+                <p>dose: string</p>
+                <p>date: string "yyyy-mm-dd"</p>
+                <p>drug: drug id</p>
+            </td>
+            <td>
+                <p>The verification digit will be validated, so need to be a valid rut (Chilean ID).</p>
+                <p>Dose need to be 0.15 <= dose <= 1.0</p>
+                <p>The drug ID need exist.</p>
+            </td>
+            <td>Register a new vaccination.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/vaccinations/:id</td>
+            <td>PUT</td>
+            <td>application/json</td>
+            <td>
+                <p>rut: string</p>
+                <p>dose: string</p>
+                <p>date: string "yyyy-mm-dd"</p>
+                <p>drug: drug id</p>
+            </td>
+            <td>
+                <p>The verification digit will be validated, so need to be a valid rut (Chilean ID).</p>
+                <p>Dose need to be 0.15 <= dose <= 1.0</p>
+                <p>The drug ID need exist.</p>
+            </td>
+            <td>Update a vaccination.</td>
+        </tr>
+        <tr>
+            <td>ec2-54-232-160-16.sa-east-1.compute.amazonaws.com:8000/vaccinations/:id</td>
+            <td>DELETE</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Delete a vaccination.</td>
+        </tr>
     </table>
 </div>
+<br>
 
 # Prerequisites
 
