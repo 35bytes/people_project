@@ -14,6 +14,10 @@
     - [macOS](#macOS)
     - [Linux](#Linux)
 - [Install](#Install)
+- [Run server](#Run-server)
+    - [Local](#Local)
+    - [Run server with public access](#Run-server-with-public-access)
+    - [Run server in backgroud](#Run-server-in-backgroud)
 
 # Introduction
 
@@ -222,3 +226,82 @@ DATABASES = {
 ```
 
 This will change the database to a `sqlite` in your local machine.
+
+# Run server
+
+## Local
+
+To run our server we need the terminal and execute the follow commands.
+
+```zsh
+$ python3 manage.py runserver
+```
+
+With this we can get access to API REST from our local machine. The valid URLS are:
+
+<div>
+    <table>
+        <tr>
+            <th>URL</th>
+        </tr>
+        <tr><td><a href="http://localhost:8000/drugs">http://localhost:8000/drugs</a></td></tr>
+        <tr><td><a href="http://localhost:8000/drugs/2">http://localhost:8000/drugs/:id</a></td></tr>
+        <tr><td><a href="http://localhost:8000/drug">http://localhost:8000/drug</a></td></tr>
+        <tr><td><a href="http://localhost:8000/drug/2">http://localhost:8000/drug/:id</a></td></tr>
+        <tr><td><a href="http://localhost:8000/vaccinations">http://localhost:8000/vaccinations</a></td></tr>
+        <tr><td><a href="http://localhost:8000/vaccinations/1">http://localhost:8000/vaccinations/:id</a></td></tr>
+    </table>
+</div>
+
+## Run server with public access
+
+With this way you can run the server in your machine and get access from other devices. For this you need to know the IP address from the server machine.
+
+Run the follow instruction in the terminal.
+
+```zsh
+$ python3 manage.py runserver 0.0.0.0:8000
+```
+
+<div>
+    <table>
+        <tr>
+            <th>URL</th>
+        </tr>
+        <tr><td><a>yourIP:8000/drugs</a></td></tr>
+        <tr><td><a>yourIP:8000/drugs/:id</a></td></tr>
+        <tr><td><a>yourIP:8000/drug</a></td></tr>
+        <tr><td><a>yourIP:8000/drug/:id</a></td></tr>
+        <tr><td><a>yourIP:8000/vaccinations</a></td></tr>
+        <tr><td><a>yourIP:8000/vaccinations/:id</a></td></tr>
+    </table>
+</div>
+
+## Run server in backgroud
+
+It's possible to run the server in background, on this way even when you close the terminal your server still running. For this we execute the server in a screen terminal.
+
+```zsh
+$ screen
+$ python3 manage.py runserver 0.0.0.0:8000
+```
+
+To relese the terminal you need press `Ctrl+A` and after that press `D`, now you can close the terminal and the server still running.
+
+If you want to stop the server you need to run in your terminal and know your the _screen id_ with:
+
+```zsh
+$ screen -ls
+```
+
+After you know the session id is you can kill it.
+
+```bash
+$ screen -XS [session id] quit
+```
+
+Example:
+
+```zsh
+screen -XS 20411 quit
+```
